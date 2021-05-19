@@ -1,4 +1,16 @@
-package ctrlx.webapps.iplmanager.data;
+/*
+ * File: MatchInput.java
+ * Project: data
+ * File Created: Saturday, 15th May 2021 10:32:00 pm
+ * Author: Vithushan Sylvester (vsylvester@mitrai.com)
+ * -----
+ * Last Modified: Thursday, 20th May 2021 12:10:06 am
+ * Modified By: Vithushan Sylvester (vsylvester@mitrai.com)
+ * -----
+ * Copyright 2021 vithushan sylvester
+ */
+
+ package ctrlx.webapps.iplmanager.data;
 
 public class MatchInput{
     private String id;

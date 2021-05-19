@@ -1,4 +1,16 @@
-package ctrlx.webapps.iplmanager.data;
+/*
+ * File: BatchConfiguration.java
+ * Project: data
+ * File Created: Wednesday, 19th May 2021 12:56:32 am
+ * Author: Vithushan Sylvester (vsylvester@mitrai.com)
+ * -----
+ * Last Modified: Thursday, 20th May 2021 12:09:33 am
+ * Modified By: Vithushan Sylvester (vsylvester@mitrai.com)
+ * -----
+ * Copyright 2021 vithushan sylvester
+ */
+
+ package ctrlx.webapps.iplmanager.data;
 
 import javax.sql.DataSource;
 

@@ -1,3 +1,15 @@
+/*
+ * File: Match.java
+ * Project: model
+ * File Created: Saturday, 15th May 2021 10:45:49 pm
+ * Author: Vithushan Sylvester (vsylvester@mitrai.com)
+ * -----
+ * Last Modified: Thursday, 20th May 2021 12:10:17 am
+ * Modified By: Vithushan Sylvester (vsylvester@mitrai.com)
+ * -----
+ * Copyright 2021 vithushan sylvester
+ */
+
 package ctrlx.webapps.iplmanager.model;
 
 import java.time.LocalDate;
