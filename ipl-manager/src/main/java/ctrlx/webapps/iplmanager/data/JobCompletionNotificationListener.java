@@ -4,7 +4,7 @@
  * File Created: Wednesday, 19th May 2021 2:36:26 am
  * Author: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
- * Last Modified: Wednesday, 26th May 2021 8:23:13 pm
+ * Last Modified: Wednesday, 26th May 2021 8:50:29 pm
  * Modified By: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
  * Copyright 2021 vithushan sylvester
@@ -24,6 +24,7 @@ import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import ctrlx.webapps.iplmanager.model.Team;
 
@@ -40,6 +41,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
   }
 
   @Override
+  @Transactional
   public void afterJob(JobExecution jobExecution) {
     if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
       log.info("!!! JOB FINISHED! Time to verify the results");
@@ -53,13 +55,15 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
       entityManager.createQuery("select m.team2, count(*) from Match m group by m.team2", Object[].class)
           .getResultList().stream().forEach(t -> {
             Team team = teamsData.get((String) t[0]);
-            team.setTotalMatches(team.getTotalMatches() + (long) t[1]);
+            if (team != null)
+              team.setTotalMatches(team.getTotalMatches() + (long) t[1]);
           });
 
       entityManager.createQuery("select m.matchWinner, count(*) from Match m group by m.matchWinner", Object[].class)
           .getResultList().stream().forEach(t -> {
             Team team = teamsData.get((String) t[0]);
-            team.setTotalWins((long) t[1]);
+            if (team != null)
+              team.setTotalWins((long) t[1]);
           });
 
       teamsData.values().forEach(team -> entityManager.persist(team));
