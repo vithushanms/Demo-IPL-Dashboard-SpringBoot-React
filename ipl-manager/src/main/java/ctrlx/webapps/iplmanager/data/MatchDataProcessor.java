@@ -4,7 +4,7 @@
  * File Created: Saturday, 15th May 2021 11:04:54 pm
  * Author: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
- * Last Modified: Wednesday, 26th May 2021 9:02:36 pm
+ * Last Modified: Wednesday, 26th May 2021 11:29:18 pm
  * Modified By: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
  * Copyright 2021 vithushan sylvester
@@ -14,15 +14,11 @@ package ctrlx.webapps.iplmanager.data;
 
 import java.time.LocalDate;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import ctrlx.webapps.iplmanager.model.*;
 
 import org.springframework.batch.item.ItemProcessor;
 
 public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
-
-    private static final Logger log = LoggerFactory.getLogger(MatchDataProcessor.class);
 
     @Override
     public Match process(final MatchInput matchInput) throws Exception {
