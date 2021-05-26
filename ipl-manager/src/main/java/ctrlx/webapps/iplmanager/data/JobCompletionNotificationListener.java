@@ -4,7 +4,7 @@
  * File Created: Wednesday, 19th May 2021 2:36:26 am
  * Author: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
- * Last Modified: Wednesday, 26th May 2021 8:50:29 pm
+ * Last Modified: Wednesday, 26th May 2021 9:00:44 pm
  * Modified By: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
  * Copyright 2021 vithushan sylvester
@@ -67,6 +67,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
           });
 
       teamsData.values().forEach(team -> entityManager.persist(team));
+      teamsData.values().forEach(team -> System.out.println("team: " + team.getTeamName() + " totalMatch: " + team.getTotalMatches() + " totalWins: " + team.getTotalWins()));
     }
   }
 }
