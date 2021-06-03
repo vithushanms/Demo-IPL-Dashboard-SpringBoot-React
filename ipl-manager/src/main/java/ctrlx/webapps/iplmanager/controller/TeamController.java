@@ -4,7 +4,7 @@
  * File Created: Wednesday, 26th May 2021 9:31:18 pm
  * Author: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
- * Last Modified: Thursday, 27th May 2021 1:43:57 am
+ * Last Modified: Friday, 28th May 2021 1:37:25 am
  * Modified By: Vithushan Sylvester (vsylvester@mitrai.com)
  * -----
  * Copyright 2021 vithushan sylvester
@@ -12,6 +12,7 @@
 package ctrlx.webapps.iplmanager.controller;
 
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,7 @@ import ctrlx.webapps.iplmanager.repository.MatchRepository;
 import ctrlx.webapps.iplmanager.repository.TeamRepository;
 
 @RestController
+@CrossOrigin
 public class TeamController {
     
     private TeamRepository teamRepository;

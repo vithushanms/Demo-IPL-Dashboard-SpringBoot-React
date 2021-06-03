@@ -147,5 +147,4 @@ public class Match {
     public void setUmpire2(String umpire2) {
         this.umpire2 = umpire2;
     }
-
 }
